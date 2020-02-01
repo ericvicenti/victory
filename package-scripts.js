@@ -35,7 +35,7 @@ module.exports = {
     },
     lint: {
       src: "lerna exec --parallel -- eslint --color src",
-      demo: "eslint --color demo",
+      demo: "eslint --color --ext .js,.jsx,.ts,.tsx demo",
       stories: "eslint --color stories",
       storybook: "eslint --color --no-ignore .storybook/config.js",
       test: "eslint --color test",
@@ -48,8 +48,8 @@ module.exports = {
       )
     },
     format: {
-      default: 'prettier --write "./**/*.{js,jsx,json}"',
-      ci: 'prettier --list-different "./**/*.{js,jsx,json}"'
+      default: 'prettier --write "./**/*.{js,jsx,json,ts,tsx}"',
+      ci: 'prettier --list-different "./**/*.{js,jsx,json,ts,tsx}"'
     },
     check: {
       ci: npsUtils.series.nps("format.ci", "lint", "test.ci"),

@@ -21,7 +21,7 @@
     }
   },
   "include": [
-    "demo/ts/*"
+    "demo/ts/**/*"
   ],
   "exclude": [
       "node_modules",
